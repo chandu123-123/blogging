@@ -7,7 +7,7 @@ import { signIn } from "next-auth/react";
 import { increment,decrement } from "@/store/createslice";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-const page = () => {
+const Page = () => {
   const dispatch = useDispatch();
   const checker = useSelector((state) => state.counter.value);
 

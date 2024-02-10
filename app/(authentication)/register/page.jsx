@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { userregister } from "@/app/api/register/route";
 import Link from "next/link";
-const page = () => {
+const Page = () => {
   const router = useRouter();
   return (
     <div>
