@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 const page = async ({ params }) => {
   const data = { id: params.blog };
   
-  const res = await fetch(`http://localhost:3000/api/blogdata/${params.blog}`);
+  const res = await fetch(`finalblog-58le.vercel.app/api/blogdata/${params.blog}`);
   const dat = await res.json();
   if(dat.msg){
     notFound()
