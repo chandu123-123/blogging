@@ -15,7 +15,7 @@ import Butt from "@/app/(components)/Butt";
 import { cookies } from "next/headers";
 
 const page = async () => {
-  const allusers = await fetch("finalblog-58le.vercel.app/api/allusers", {
+  const allusers = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/allusers`, {
     cache: "no-store",
   });
   const data = await allusers.json();
@@ -26,7 +26,7 @@ const page = async () => {
         <>
     
           <Card className="flex flex-col items-center justify-center h-80">
-          <Link key={e._id} href={`finalblog-58le.vercel.app/blogs/${e._id}`} user={e}>
+          <Link key={e._id} href={`${process.env.NEXT_PUBLIC_BASE_API_URL}/blogs/${e._id}`} user={e}>
             <CardHeader className="w-[20rem] ">
               <div className="flex justify-center relative aspect-[500/300]">
                 <Image src={e.image} width={100} height={100}></Image>

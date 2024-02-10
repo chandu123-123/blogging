@@ -4,14 +4,13 @@ import React from "react";
 
 const Butt = ({ id }) => {
   const router = useRouter();
-  console.log("checking");
-  console.log(id);
+ 
   return (
     <div className="text-right ">
       <button
         className=" flex justify-end bg-red-600 text-white p-2 rounded-md text-right "
         onClick={async () => {
-          const del = await fetch(`http://localhost:3000/api/deleteblog`, {
+          const del = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/deleteblog`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

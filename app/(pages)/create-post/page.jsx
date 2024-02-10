@@ -13,7 +13,7 @@ if(!cookiestore.get("loggedin")){
     "use server"
     const data=Object.fromEntries(formdata);
     console.log(data)
-    const addd=await fetch("http://localhost:3000/api/adduser",{
+    const addd=await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/adduser`,{
       method:"POST",
       body:JSON.stringify(data),
     })
