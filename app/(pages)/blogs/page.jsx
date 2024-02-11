@@ -25,7 +25,7 @@ const page = async () => {
       {data.map((e, index) => (
         <>
     
-          <Card className="flex flex-col items-center justify-center h-80">
+          <Card key={e._id} className="flex flex-col items-center justify-center h-80">
           <Link key={e._id} href={`${process.env.NEXT_PUBLIC_BASE_API_URL}/blogs/${e._id}`} user={e}>
             <CardHeader className="w-[20rem] ">
               <div className="flex justify-center relative aspect-[500/300]">

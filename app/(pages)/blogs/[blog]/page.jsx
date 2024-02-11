@@ -15,6 +15,11 @@ const page = async ({ params }) => {
   
     notFound()
   }
+  let link
+  if(dat.links){
+     link=dat.links.split(",")
+   
+  }
   return (
     <div className="mb-[3rem] max-w-70% sm : flex sm: flex-col justify-center gap-4 items-center mt-4 md:flex  lg:flex">
       <div>
@@ -29,6 +34,15 @@ const page = async ({ params }) => {
       <div className="flex flex-col justify-start items-start w-3/4">
         <h1 className="font-bold text-[50px]">Title</h1>
         <p className="text-[2rem]">{dat.title}</p>
+       {link && <h1 className="font-bold text-[50px]">Links</h1>}
+        <p className="text-[2rem] flex flex-col">
+          {dat.links &&
+            link.map((e,index)=>(
+            
+              <a href={e} key={e._id} className="text-[20px]">{e}</a>
+            ))
+          }
+        </p>
         <h1 className="font-bold text-[50px]">Description</h1>
         <p>{dat.description
         

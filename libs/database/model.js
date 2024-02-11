@@ -4,6 +4,7 @@ const userschema = new Schema({
     title:"String",
     description:"String",
     image:"String",
+    links:"String"
     },{timestamps:{
         createdAt:true,
         updatedAt:true,

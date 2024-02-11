@@ -29,6 +29,7 @@ if(!cookiestore.get("loggedin")){
       <form action={insert} className='flex flex-col'>
         <input type="text" placeholder='title' name='title' />
         <input type="text" placeholder='description' name='description' />
+        <input type="text" placeholder='Links' name='links' />
         <input type="text" name="image" placeholder="image url"/>
        <Button></Button>
       </form>

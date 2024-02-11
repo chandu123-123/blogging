@@ -9,6 +9,7 @@ export async  function GET(req,{params}){
 let blogdat
 try{
   blogdat= await useradd.findById(params.id)
+  console.log(blogdat)
 }
 catch(err){
    

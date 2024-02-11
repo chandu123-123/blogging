@@ -5,13 +5,14 @@ import { NextResponse } from "next/server"
 
 export async function POST(req){
      const body=await req.json()
-   const {title,description,image}=body
+   const {title,description,image,links}=body
    await dbconnection()
 
     const userinsert=useradd({
         title,
         description,
         image,
+        links
     })
     const inserted=await userinsert.save()
     if(inserted){
