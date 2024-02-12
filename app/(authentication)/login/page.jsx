@@ -22,11 +22,8 @@ const Page = () => {
             alert("enter valid details");
           } else {
             await dispatch(increment())
-            console.log(checker)
-            console.log(result);
+         
             const { email, password, key } = result;
-
-            console.log(email, password);
 
          
             router.replace("/");

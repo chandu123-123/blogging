@@ -34,7 +34,7 @@ const page = async () => {
           <Link key={e._id} href={`${process.env.NEXT_PUBLIC_BASE_API_URL}/blogs/${e._id}`} user={e}>
             <CardHeader className="w-[20rem] ">
               <div className="flex justify-center relative aspect-[500/300]">
-                <Image src={e.image} width={100} height={100} alt="not found"></Image>
+                <Image src={e.image} width={100} height={100} alt="no image for this blog"></Image>
               </div>
               <CardTitle>{
               e.title.length>40?

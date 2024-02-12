@@ -7,14 +7,14 @@ import { useFormStatus } from 'react-dom'
 const Button = () => {
       const {pending}=useFormStatus()
       const router=useRouter()
-      console.log(pending)
+     
     //  if(pending){
     //    router.refresh()
     //     router.push("/blogs")
     //  }
   return (
-    <div>
-       <button type='submit'>{pending?"Adding into database":"Add"}</button>
+    <div className='h-8'>
+       <button className="w-[100%] rounded-md  hover:text-[1.1rem] hover:bg-black hover:text-white hover:transition-all p-2" type='submit'>{pending?"Adding into database":"ADD"}</button>
     </div>
   )
 }

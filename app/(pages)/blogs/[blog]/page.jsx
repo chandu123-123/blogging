@@ -40,7 +40,7 @@ const page = async ({ params }) => {
       <div>
         <Image
           src={dat.image}
-          alt="not found"
+          alt="image of the blog"
           width={400}
           height={400}
           className="bg-red-500"
