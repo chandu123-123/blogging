@@ -83,26 +83,38 @@ const Navbar = ({ admin }) => {
             <></>
           )}
         </ul>
-: <> <DropdownMenu>
-<DropdownMenuTrigger>MENU</DropdownMenuTrigger>
-<DropdownMenuContent>
-  <DropdownMenuItem>
-  <Link href="/" prefetch={false}>
+: <> 
+
+
+
+
+<DropdownMenu>
+  <DropdownMenuTrigger>MENU</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    
+    <DropdownMenuSeparator />
+    <Link href="/" prefetch={false}>
+    <DropdownMenuItem>
+
               Home
-            </Link>
+          
   </DropdownMenuItem>
-  <DropdownMenuSeparator />
-  <DropdownMenuItem>
+  </Link>
   <Link href="/about-us" prefetch={false}>
+  <DropdownMenuItem>
+
               About Us
-            </Link>
+        
   </DropdownMenuItem>
-  <DropdownMenuItem>
+  </Link>
+ 
   <Link href="/blogs" prefetch={false}>
-              Blogs
-            </Link>
-  </DropdownMenuItem>
   <DropdownMenuItem>
+              Blogs
+            
+  </DropdownMenuItem>
+  </Link>
+ 
   {checker? (
             <div className="cursor-pointer" onClick={async ()=>{
               await cookiehandling()
@@ -113,30 +125,34 @@ const Navbar = ({ admin }) => {
             
             
             }}>
-             
+              <DropdownMenuItem>
                 Logout
-             
+                </DropdownMenuItem>
             </div>
           ) : (
             <Link href="/login" prefetch={false}>
+                 <DropdownMenuItem>
               Login
+              </DropdownMenuItem>
             </Link>
           )}
-  </DropdownMenuItem>
-  <DropdownMenuItem>
+  
   {checker? (
          
               <Link href="/create-post" prefetch={false}>
+                <DropdownMenuItem>
                 create post
+                </DropdownMenuItem>
               </Link>
           
           ) : (
             <></>
           )}
 
-  </DropdownMenuItem>
-</DropdownMenuContent>
+
+  </DropdownMenuContent>
 </DropdownMenu>
+
 </>
 }
      

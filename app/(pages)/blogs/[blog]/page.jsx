@@ -2,6 +2,21 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+export const generateMetadata =async ({params})=> {
+  const data = { id: params.blog };
+  
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/blogdata/${params.blog}`);
+  const dat = await res.json();
+
+
+  
+
+  return {
+ 
+  description: `${dat.description}`,
+}
+};
+
 const page = async ({ params }) => {
   const data = { id: params.blog };
   
@@ -15,10 +30,10 @@ const page = async ({ params }) => {
   
     notFound()
   }
-  let link
+  let link=dat.desc;
   if(dat.links){
      link=dat.links.split(",")
-   
+      
   }
   return (
     <div className="mb-[3rem] max-w-70% sm : flex sm: flex-col justify-center gap-4 items-center mt-4 md:flex  lg:flex">

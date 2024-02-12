@@ -14,6 +14,11 @@ import Image from "next/image";
 import Butt from "@/app/(components)/Butt";
 import { cookies } from "next/headers";
 
+export const metadata = {
+  title:"Blogs",
+  description: "in this page it contains all stuff related to programming language , new technologies , ai tools which are evolving daily etc",
+};
+
 const page = async () => {
   const allusers = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/allusers`, {
     cache: "no-store",
